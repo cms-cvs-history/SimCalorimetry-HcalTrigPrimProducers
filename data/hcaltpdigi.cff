@@ -1,5 +1,5 @@
 
- include "SimCalorimetry/HcalSimProducers/data/hcaltpdigi.cfi"		
+ include "SimCalorimetry/HcalTrigPrimProducers/data/hcaltpdigi.cfi"		
 
  es_source = HcalTPGCoderULUT {
         FileInPath filename='CalibCalorimetry/HcalTPGAlgos/data/inputLUTcoder.dat'
