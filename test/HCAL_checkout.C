@@ -1,30 +1,6 @@
-#include <iostream>
-#include <fstream>
-#include <iomanip>
-#include <string>
-#include "TMath.h"
-#include "TROOT.h"
-#include "TFile.h"
-#include "TTree.h"
-#include "TH1F.h"
-#include "TH2F.h"
-#include "TCanvas.h"
-#include "TPad.h"
-#include "TString.h"
-#include "TCut.h"
-#include "TClonesArray.h"
-#include "TProfile.h"
-#include "TF1.h"
-#include "TStyle.h"
-#include "Rtypes.h"
-#include "TText.h"
-#include "TLine.h"
-
-
+#include "HCAL_checkout.h"
 
 using namespace TMath;
-
-double et2e(int eta);
 
 void initStyle( TStyle * sty )
 {
@@ -453,7 +429,7 @@ int check_out(char* input_file, char* output_file)
   eff_lut4->GetYaxis()->SetTitle("Efficiency");
   eff_lut4->GetYaxis()->CenterTitle();
   c2->Print("output.ps(");
-  //  delete c2;
+  delete c2;
 
   //tower by tower efficiencies
   TCanvas *c3 = new TCanvas();
@@ -465,7 +441,7 @@ int check_out(char* input_file, char* output_file)
   //heffic->GetYaxis()->CenterTitle();
   SetupTowerDisplay(heffic);
   c3->Print("output.ps");
-  //delete c3;
+  delete c3;
 
   TCanvas *c4 = new TCanvas();
   hthresh->SetStats(kFALSE);
@@ -476,7 +452,7 @@ int check_out(char* input_file, char* output_file)
   //hthresh->GetYaxis()->CenterTitle();
   SetupTowerDisplay(hthresh);
   c4->Print("output.ps");
-  //delete c4;
+  delete c4;
 
   TCanvas *c5 = new TCanvas();
   hwidth->SetStats(kFALSE);
@@ -487,7 +463,7 @@ int check_out(char* input_file, char* output_file)
   //hwidth->GetYaxis()->CenterTitle();
   SetupTowerDisplay(hwidth);
   c5->Print("output.ps");
-  //delete c5;
+  delete c5;
 
   //efficiency summary
   TCanvas *c6 = new TCanvas();
@@ -518,7 +494,7 @@ int check_out(char* input_file, char* output_file)
   effsum_lut4->GetYaxis()->SetTitle("Ntowers");
   effsum_lut4->GetYaxis()->CenterTitle();
   c6->Print("output.ps");
-  //delete c6;
+  delete c6;
 
   TCanvas *c7 = new TCanvas();
   gStyle->SetOptStat("emruo");
@@ -548,7 +524,7 @@ int check_out(char* input_file, char* output_file)
   threshsum_lut4->GetYaxis()->SetTitle("Ntowers");
   threshsum_lut4->GetYaxis()->CenterTitle();
   c7->Print("output.ps");
-  //delete c7;
+  delete c7;
 
   TCanvas *c8 = new TCanvas();
   c8->Divide(2,2);
@@ -578,7 +554,7 @@ int check_out(char* input_file, char* output_file)
   widthsum_lut4->GetYaxis()->SetTitle("Ntowers");
   widthsum_lut4->GetYaxis()->CenterTitle();
   c8->Print("output.ps");
-  //delete c8;
+  delete c8;
 
   //slopes
   //raw slope
@@ -616,19 +592,15 @@ int check_out(char* input_file, char* output_file)
   hit_tpg_lut4->GetYaxis()->SetTitle("Uncompressed TPG (GeV)");
   hit_tpg_lut4->GetYaxis()->CenterTitle();
   c15->Print("output.ps");
-  //delete c15;
+  delete c15;
 
   //tower by tower slope
   TCanvas *c16 = new TCanvas();
   hslope->SetStats(kFALSE);
   hslope->Draw("COLZ");
-  //hslope->GetXaxis()->SetTitle("ieta");
-  //hslope->GetXaxis()->CenterTitle();
-  //hslope->GetYaxis()->SetTitle("iphi");
-  //hslope->GetYaxis()->CenterTitle();
   SetupTowerDisplay(hslope);
   c16->Print("output.ps");
-  //delete c16;
+  delete c16;
 
   //slope summary
   TCanvas *c17 = new TCanvas();
@@ -640,7 +612,7 @@ int check_out(char* input_file, char* output_file)
   slope_sum->GetYaxis()->CenterTitle();
   c17->SetLogy();
   c17->Print("output.ps");
-  //delete c17;
+  delete c17;
 
   //resolution
   //raw resoltions
