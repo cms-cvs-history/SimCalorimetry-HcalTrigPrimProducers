@@ -2,7 +2,8 @@
  include "SimCalorimetry/HcalTrigPrimProducers/data/hcaltpdigi.cfi"		
 
  es_source = HcalTPGCoderULUT {
-        FileInPath filename="CalibCalorimetry/HcalTPGAlgos/data/inputLUTcoder.dat"
+	#FileInPath filename="CalibCalorimetry/CaloTPG/data/outputLUTtranscoder.dat"
+        FileInPath filename="CalibCalorimetry/HcalTPGAlgos/data/RecHit-TPG-calib.dat"
   }
 	
  include "CalibCalorimetry/CaloTPG/data/CaloTPGTranscoder.cfi"
