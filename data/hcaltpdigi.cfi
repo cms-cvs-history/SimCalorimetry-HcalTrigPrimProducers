@@ -4,5 +4,5 @@ module hcalTriggerPrimitiveDigis = HcalTrigPrimDigiProducer {
   //vdouble weights = { -1, -1, 1, 1} //low lumi algo
   bool peakFilter = true //peak finding on or off
 // Input digi label (_must_ be without zero-suppression!)
-  InputTag inputLabel = hcalDigis
+  InputTag inputLabel = hcalUnsuppressedDigis
 }
