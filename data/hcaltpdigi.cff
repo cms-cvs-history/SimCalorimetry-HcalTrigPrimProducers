@@ -2,8 +2,10 @@
  include "SimCalorimetry/HcalTrigPrimProducers/data/hcaltpdigi.cfi"		
 
  es_module = HcalTPGCoderULUT {
-	#FileInPath filename="CalibCalorimetry/CaloTPG/data/outputLUTtranscoder.dat"
         FileInPath filename="CalibCalorimetry/HcalTPGAlgos/data/RecHit-TPG-calib.dat"
+        bool read_Ascii_LUTs = false
+        ## if read_Ascii_LUTs is true then read Ascii LUTs via "inputLUTs" below
+        FileInPath inputLUTs="CalibCalorimetry/HcalTPGAlgos/data/inputLUTcoder.dat"
   }
 	
  include "CalibCalorimetry/CaloTPG/data/CaloTPGTranscoder.cfi"
