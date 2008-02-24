@@ -3,6 +3,7 @@ module hcalTriggerPrimitiveDigis = HcalTrigPrimDigiProducer {
   vdouble weights = {1, 1} //hardware algo		
   //vdouble weights = { -1, -1, 1, 1} //low lumi algo
   bool peakFilter = true //peak finding on or off
-// Input digi label (_must_ be without zero-suppression!)
+  uint32 FG_threshold = 1 // threshold for setting fine grain bit	
+ // Input digi label (_must_ be without zero-suppression!)
   InputTag inputLabel = hcalUnsuppressedDigis
 }
