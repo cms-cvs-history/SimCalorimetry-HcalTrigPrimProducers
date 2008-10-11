@@ -1,9 +1,0 @@
-module simHcalTriggerPrimitiveDigis = HcalTrigPrimDigiProducer {
-  int32 latency = 1
-  vdouble weights = {1, 1} //hardware algo		
-  //vdouble weights = { -1, -1, 1, 1} //low lumi algo
-  bool peakFilter = true //peak finding on or off
-  uint32 FG_threshold = 32 // threshold for setting fine grain bit	
- // Input digi label (_must_ be without zero-suppression!)
-  InputTag inputLabel = simHcalUnsuppressedDigis
-}
