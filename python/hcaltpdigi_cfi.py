@@ -13,8 +13,8 @@ simHcalTriggerPrimitiveDigis = cms.EDProducer("HcalTrigPrimDigiProducer",
 #
     #vdouble weights = { -1, -1, 1, 1} //low lumi algo
     # Input digi label (_must_ be without zero-suppression!)
-    inputLabel = cms.VInputTag(cms.InputTag('mix', 'simHcalUnsuppressedDigis'),
-                               cms.InputTag('mix', 'simHcalUnsuppressedDigis')),
+    inputLabel = cms.VInputTag(cms.InputTag('simHcalUnsuppressedDigis'),
+                               cms.InputTag('simHcalUnsuppressedDigis')),
     InputTagFEDRaw = cms.InputTag("source"),
     RunZS = cms.bool(False),
     FrontEndFormatError = cms.bool(False), # Front End Format Error, for real data only
